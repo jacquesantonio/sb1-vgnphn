@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CreatorHero from '../components/creators/Hero.astro';
+import CreatorBenefits from '../components/creators/Benefits.astro';
+import CreatorPricing from '../components/creators/Pricing.astro';
+import CreatorFAQ from '../components/creators/FAQ.astro';
+import SignupForm from '../components/creators/SignupForm.astro';
+---
+
+<Layout title="CreatorLabs - For Creators">
+  <Header />
+  <main>
+    <CreatorHero />
+    <CreatorBenefits />
+    <CreatorPricing />
+    <CreatorFAQ />
+    <SignupForm />
+  </main>
+  <Footer />
+</Layout>

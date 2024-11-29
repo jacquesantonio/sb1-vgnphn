@@ -1,0 +1,49 @@
+---
+import { FaSearch, FaCogs, FaChartBar, FaShieldAlt } from 'react-icons/fa';
+import Card from '../ui/Card.astro';
+
+const solutions = [
+  {
+    title: "Creator Discovery",
+    description: "Find the perfect creators with our AI-powered matching system based on your brand values and target audience.",
+    Icon: FaSearch
+  },
+  {
+    title: "Campaign Management",
+    description: "Streamline your workflow with our comprehensive campaign management tools and automation.",
+    Icon: FaCogs
+  },
+  {
+    title: "Performance Analytics",
+    description: "Track ROI and campaign performance with detailed analytics and reporting dashboards.",
+    Icon: FaChartBar
+  },
+  {
+    title: "Brand Safety",
+    description: "Ensure brand safety with our creator vetting process and content approval workflows.",
+    Icon: FaShieldAlt
+  }
+];
+---
+<section class="py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Enterprise Solutions</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {solutions.map(solution => (
+        <Card>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                <solution.Icon className="w-6 h-6 text-indigo-600" />
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">{solution.title}</h3>
+              <p class="text-gray-600">{solution.description}</p>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

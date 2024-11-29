@@ -1,0 +1,91 @@
+---
+import Card from '../ui/Card.astro';
+import Button from '../ui/Button.astro';
+
+const plans = [
+  {
+    name: "Growth",
+    price: "$499/month",
+    description: "For brands starting with creator marketing",
+    features: [
+      "Up to 10 active campaigns",
+      "Basic analytics",
+      "Email support",
+      "Content library",
+      "Campaign management tools"
+    ]
+  },
+  {
+    name: "Scale",
+    price: "$999/month",
+    description: "For brands scaling their creator programs",
+    features: [
+      "Unlimited campaigns",
+      "Advanced analytics",
+      "Priority support",
+      "Content library",
+      "Campaign management tools",
+      "API access",
+      "Custom reporting"
+    ],
+    popular: true
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    description: "For large brands and agencies",
+    features: [
+      "Unlimited campaigns",
+      "Enterprise analytics",
+      "Dedicated account manager",
+      "Custom integrations",
+      "Advanced workflows",
+      "Brand safety tools",
+      "Multi-user access"
+    ]
+  }
+];
+---
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Pricing Plans</h2>
+      <p class="text-gray-600">Scale your creator marketing with confidence</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {plans.map(plan => (
+        <Card class:list={[
+          "flex flex-col",
+          { "border-2 border-indigo-500 relative": plan.popular }
+        ]}>
+          {plan.popular && (
+            <div class="absolute top-0 right-0 bg-indigo-500 text-white px-4 py-1 text-sm rounded-bl-lg rounded-tr-lg">
+              Most Popular
+            </div>
+          )}
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2">{plan.name}</h3>
+            <div class="text-3xl font-bold mb-4">{plan.price}</div>
+            <p class="text-gray-600 mb-6">{plan.description}</p>
+            <ul class="space-y-3 mb-8">
+              {plan.features.map(feature => (
+                <li class="flex items-center">
+                  <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <Button
+              variant={plan.popular ? "secondary" : "outline"}
+              class="w-full"
+            >
+              {plan.name === "Enterprise" ? "Contact Sales" : "Get Started"}
+            </Button>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

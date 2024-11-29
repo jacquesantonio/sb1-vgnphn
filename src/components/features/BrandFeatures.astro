@@ -1,0 +1,52 @@
+---
+import Card from '../ui/Card.astro';
+import { FaSearch, FaCogs, FaChartBar, FaPhotoVideo } from 'react-icons/fa';
+
+const features = [
+  {
+    title: "Creator Discovery",
+    description: "Advanced search and filtering to find creators that match your brand's values and target audience.",
+    Icon: FaSearch
+  },
+  {
+    title: "Campaign Builder",
+    description: "Create and manage multi-channel campaigns with our drag-and-drop campaign builder.",
+    Icon: FaCogs
+  },
+  {
+    title: "Performance Tracking",
+    description: "Real-time analytics and ROI tracking for all your creator partnerships.",
+    Icon: FaChartBar
+  },
+  {
+    title: "Content Library",
+    description: "Centralized hub for managing and repurposing creator content across channels.",
+    Icon: FaPhotoVideo
+  }
+];
+---
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-4xl font-bold mb-6">Enterprise-Grade Tools</h2>
+      <p class="text-xl text-gray-600">Powerful features to scale your creator partnerships.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {features.map(feature => (
+        <Card>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                <feature.Icon className="w-6 h-6 text-indigo-600" />
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p class="text-gray-600">{feature.description}</p>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

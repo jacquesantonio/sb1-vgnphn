@@ -1,0 +1,22 @@
+---
+const brands = [
+  { name: "Nike", logo: "/brands/nike.svg" },
+  { name: "Adobe", logo: "/brands/adobe.svg" },
+  { name: "Spotify", logo: "/brands/spotify.svg" },
+  { name: "Samsung", logo: "/brands/samsung.svg" },
+  { name: "Microsoft", logo: "/brands/microsoft.svg" },
+  { name: "Google", logo: "/brands/google.svg" }
+];
+---
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h3 class="text-center text-lg text-gray-600 mb-12">Trusted by world-class brands</h3>
+    <div class="flex flex-wrap justify-center items-center gap-12 opacity-70">
+      {brands.map(brand => (
+        <div class="text-2xl font-bold text-gray-400 hover:text-gray-600 transition-colors">
+          {brand.name}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

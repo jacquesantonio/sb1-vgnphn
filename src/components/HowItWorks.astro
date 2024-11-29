@@ -1,0 +1,82 @@
+---
+interface Step {
+  number: number;
+  title: string;
+  description: string;
+  userType: 'creator' | 'brand';
+}
+
+const steps: Step[] = [
+  {
+    number: 1,
+    title: "Create Your Profile",
+    description: "Build your professional profile showcasing your niche and achievements.",
+    userType: 'creator'
+  },
+  {
+    number: 2,
+    title: "Connect with Brands",
+    description: "Browse and apply to relevant brand campaigns.",
+    userType: 'creator'
+  },
+  {
+    number: 3,
+    title: "Create & Earn",
+    description: "Produce content and get paid for your creativity.",
+    userType: 'creator'
+  },
+  {
+    number: 1,
+    title: "Set Up Brand Account",
+    description: "Create your brand profile and verification.",
+    userType: 'brand'
+  },
+  {
+    number: 2,
+    title: "Launch Campaigns",
+    description: "Create campaigns and set your requirements.",
+    userType: 'brand'
+  },
+  {
+    number: 3,
+    title: "Manage & Scale",
+    description: "Review content, approve, and scale successful campaigns.",
+    userType: 'brand'
+  }
+];
+---
+<section id="how-it-works" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12">How It Works</h2>
+    
+    <div class="mb-16">
+      <h3 class="text-2xl font-semibold text-center mb-8">For Creators</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {steps.filter(step => step.userType === 'creator').map(step => (
+          <div class="relative">
+            <div class="bg-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4">
+              {step.number}
+            </div>
+            <h3 class="text-xl font-semibold mb-4">{step.title}</h3>
+            <p class="text-gray-600">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-2xl font-semibold text-center mb-8">For Brands</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {steps.filter(step => step.userType === 'brand').map(step => (
+          <div class="relative">
+            <div class="bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4">
+              {step.number}
+            </div>
+            <h3 class="text-xl font-semibold mb-4">{step.title}</h3>
+            <p class="text-gray-600">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

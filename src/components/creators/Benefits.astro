@@ -1,0 +1,49 @@
+---
+import { FaMoneyBillWave, FaHandshake, FaChartLine, FaTools } from 'react-icons/fa';
+import Card from '../ui/Card.astro';
+
+const benefits = [
+  {
+    title: "Higher Earnings",
+    description: "Earn more with direct brand partnerships and negotiated rates that reflect your true value.",
+    Icon: FaMoneyBillWave
+  },
+  {
+    title: "Quality Partnerships",
+    description: "Connect with vetted brands that align with your values and content style.",
+    Icon: FaHandshake
+  },
+  {
+    title: "Growth Tools",
+    description: "Access analytics and insights to grow your audience and improve engagement.",
+    Icon: FaChartLine
+  },
+  {
+    title: "Creator Resources",
+    description: "Get exclusive access to training, templates, and professional development tools.",
+    Icon: FaTools
+  }
+];
+---
+<section class="py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Why Creators Choose Us</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {benefits.map(benefit => (
+        <Card>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                <benefit.Icon className="w-6 h-6 text-purple-600" />
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">{benefit.title}</h3>
+              <p class="text-gray-600">{benefit.description}</p>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

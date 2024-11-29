@@ -1,0 +1,64 @@
+---
+interface Props {
+  variant?: 'light' | 'dark';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+}
+
+const { 
+  variant = 'dark',
+  size = 'md',
+  class: className 
+} = Astro.props;
+
+const sizes = {
+  sm: 'h-6',
+  md: 'h-8',
+  lg: 'h-10'
+};
+
+const textColors = {
+  light: 'text-white',
+  dark: 'text-gray-900'
+};
+
+const accentColors = {
+  light: 'text-purple-200',
+  dark: 'text-purple-600'
+};
+---
+<div class:list={["flex items-center gap-2", className]}>
+  <svg 
+    class={sizes[size]} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <!-- Beaker Base -->
+    <path 
+      d="M8 3.5C8 2.67157 8.67157 2 9.5 2H14.5C15.3284 2 16 2.67157 16 3.5V8L19 16.5C19 19.5376 16.5376 22 13.5 22H10.5C7.46243 22 5 19.5376 5 16.5L8 8V3.5Z"
+      class={`fill-current ${accentColors[variant]}`}
+    />
+    <!-- Liquid -->
+    <path 
+      d="M5 16.5C5 19.5376 7.46243 22 10.5 22H13.5C16.5376 22 19 19.5376 19 16.5L16.5 12H7.5L5 16.5Z"
+      class={`fill-current ${accentColors[variant]}`}
+      fill-opacity="0.3"
+    />
+    <!-- Bubbles -->
+    <circle cx="12" cy="5" r="1" fill="currentColor"/>
+    <circle cx="10.5" cy="7" r="1" fill="currentColor"/>
+    <circle cx="13.5" cy="8" r="1" fill="currentColor"/>
+  </svg>
+  <span class:list={[
+    "font-bold tracking-tight",
+    textColors[variant],
+    {
+      'text-lg': size === 'sm',
+      'text-xl': size === 'md',
+      'text-2xl': size === 'lg'
+    }
+  ]}>
+    Creator<span class={accentColors[variant]}>Labs</span>
+  </span>
+</div>

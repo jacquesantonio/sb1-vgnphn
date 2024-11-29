@@ -1,0 +1,40 @@
+---
+import Logo from './ui/Logo.astro';
+---
+<footer class="bg-gray-800 text-white py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <Logo variant="light" size="lg" class="mb-4" />
+        <p class="text-gray-400">Connecting creators with brands that matter.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Platform</h4>
+        <ul class="space-y-2">
+          <li><a href="#creators" class="text-gray-400 hover:text-white">For Creators</a></li>
+          <li><a href="#brands" class="text-gray-400 hover:text-white">For Brands</a></li>
+          <li><a href="#success-stories" class="text-gray-400 hover:text-white">Success Stories</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Resources</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white">Creator Academy</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white">Brand Guidelines</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white">Support Center</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Legal</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white">Content Guidelines</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+      <p>&copy; {new Date().getFullYear()} CreatorLabs. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

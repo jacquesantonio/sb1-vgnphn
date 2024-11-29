@@ -1,0 +1,35 @@
+---
+const faqs = [
+  {
+    question: "How do I get started?",
+    answer: "Sign up for a free account, complete your profile, and start browsing available brand partnerships. Our matching system will also recommend opportunities based on your niche and audience."
+  },
+  {
+    question: "How do payments work?",
+    answer: "We handle all payments securely through our platform. Once a campaign is completed and approved, payment is released to your connected bank account within 7 business days."
+  },
+  {
+    question: "What kind of brands can I work with?",
+    answer: "We work with a diverse range of brands across industries. You'll have access to both established companies and exciting startups that match your content style and values."
+  },
+  {
+    question: "Can I negotiate rates?",
+    answer: "Yes! While brands may set initial rates, you can negotiate based on your metrics, deliverables, and unique value proposition."
+  }
+];
+---
+<section class="py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+    <div class="max-w-3xl mx-auto">
+      <div class="space-y-6">
+        {faqs.map(faq => (
+          <div class="border-b border-gray-200 pb-6">
+            <h3 class="text-xl font-semibold mb-2">{faq.question}</h3>
+            <p class="text-gray-600">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
